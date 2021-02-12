@@ -39,7 +39,18 @@
         <regexp>@^\[(?&lt;object_id&gt;\S+?)\]$@</regexp>
         <xpath/>
       </section>
-      <lines/>
+      <lines>
+        <line>
+          <array name="host_list">
+            <lines/>
+            <regexp>@^(?&lt;host&gt;\S+?)\s+?ansible_connection=(?&lt;ansible_connection&gt;\S+?)\s+?ansible_user=(?&lt;ansible_user&gt;\S+?)\s+?ansible_ssh_pass=(?&lt;ansible_ssh_pass&gt;\S+?)$@</regexp>
+            <mregexp>@^\s \s*$@</mregexp>
+            <xpath/>
+          </array>
+          <regexp/>
+          <xpath/>
+        </line>
+      </lines>
     </parser>
   </command>
   <command name="UPDATE"/>
