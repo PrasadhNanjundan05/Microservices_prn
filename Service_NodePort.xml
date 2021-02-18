@@ -41,7 +41,7 @@
   <command name="UPDATE"/>
   <command name="CONSTRAINT"/>
   <command name="CREATE">
-    <operation></operation>
+    <operation>asd</operation>
     <rest>POST#</rest>
     <xpath>/api/v1/namespaces/{$params.namespace}/services</xpath>
   </command>
