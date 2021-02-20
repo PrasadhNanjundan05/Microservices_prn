@@ -43,7 +43,7 @@
         <line>
           <array name="host_list">
             <lines/>
-            <regexp>@^(?&lt;host&gt;\S+?)\s+?ansible_connection=(?&lt;ansible_connection&gt;\S+?)\s+?ansible_user=(?&lt;ansible_user&gt;\S+?)\s+?ansible_ssh_pass=(?&lt;ansible_ssh_pass&gt;\S+?)$@</regexp>
+            <regexp>@^(?&lt;host&gt;\S+?)\s+?ansible_connection=(?&lt;ansible_connection&gt;\S+?)\s+?ansible_user=(?&lt;ansible_user&gt;\S+?)\s+?ansible_ssh_pass=(?&lt;ansible_ssh_pass&gt;\S+?\s*?.*?)$@</regexp>
             <mregexp>@^\s \s*$@</mregexp>
             <xpath/>
           </array>
