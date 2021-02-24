@@ -66,9 +66,6 @@
           <regexp>@^Local\s+?Intf:\s+?(?&lt;local_iface&gt;\S+?)$@</regexp>
           <xpath/>
         </line>
-        <ignore>
-          <regexp>@^[^-].+?$@</regexp>
-        </ignore>
       </lines>
     </parser>
   </command>
