@@ -25,22 +25,37 @@
     <sortvariable>param._order</sortvariable>
   </information>
   <variables frozen="0">
-    <variable displayName="object_id" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="OSPF process ID" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Network address" name="params.interface.0.network_address" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="1" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Network mask" name="params.interface.0.network_mask" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="2" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Area" name="params.interface.0.area" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="3" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
   </variables>
   <example/>
   <command name="IMPORT">
+    <operation>show running-config | section router ospf</operation>
     <parser>
       <section>
-        <regexp>@^\s \s*$@</regexp>
+        <regexp>@^router\s+?ospf\s+?(?&lt;object_id&gt;\d+?)$@</regexp>
         <xpath/>
       </section>
-      <lines/>
+      <lines>
+        <line>
+          <array name="interface">
+            <lines/>
+            <regexp>@^\s+?network+?(?&lt;network_address&gt;(\d{1,3}\.){3)\d{1,3})\s+?(?&lt;network_mask&gt;(\d{1,3}\.){3)\d{1,3})\s+?area\s+?(?&lt;area&gt;\d+?)$@</regexp>
+            <mregexp>@^\s \s*$@</mregexp>
+            <xpath/>
+          </array>
+          <regexp/>
+          <xpath/>
+        </line>
+      </lines>
     </parser>
   </command>
-  <command name="CREATE"/>
-  <command name="READ"/>
   <command name="UPDATE"/>
   <command name="CONSTRAINT"/>
+  <command name="CREATE"/>
   <command name="DELETE"/>
+  <command name="READ"/>
   <command name="LIST"/>
 </ObjectDefinition>
