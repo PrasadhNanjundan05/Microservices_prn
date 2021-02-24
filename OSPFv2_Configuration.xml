@@ -57,6 +57,9 @@
   </command>
   <command name="UPDATE">
     <operation>router ospf {$params.object_id}
+{foreach $OSPFv2_Configuration.$object_id.interface item=details}
+ no network {$details.network_address} {$details.network_mask} area {$details.area}
+{/foreach}
 {foreach $params.interface item=details}
  network {$details.network_address} {$details.network_mask} area {$details.area}
 {/foreach}</operation>
@@ -65,7 +68,7 @@
   <command name="CREATE">
     <operation>router ospf {$params.object_id}
 {foreach $params.interface item=details}
- network {$details.network_address} {$details.network_mask} area {$details.area}
+network {$details.network_address} {$details.network_mask} area {$details.area}
 {/foreach}</operation>
   </command>
   <command name="DELETE"/>
