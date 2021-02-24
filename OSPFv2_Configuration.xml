@@ -42,7 +42,7 @@
         <line>
           <array name="interface">
             <lines/>
-            <regexp>@^\s+?network+?(?&lt;network_address&gt;(\d{1,3}\.){3)\d{1,3})\s+?(?&lt;network_mask&gt;(\d{1,3}\.){3)\d{1,3})\s+?area\s+?(?&lt;area&gt;\d+?)$@</regexp>
+            <regexp>@^\s+?network\s+?(?&lt;network_address&gt;(\d{1,3}\.){3}\d{1,3})\s+?(?&lt;network_mask&gt;(\d{1,3}\.){3}\d{1,3})\s+?area\s+?(?&lt;area&gt;\d+?)$@</regexp>
             <mregexp>@^\s \s*$@</mregexp>
             <xpath/>
           </array>
@@ -55,9 +55,19 @@
       </lines>
     </parser>
   </command>
-  <command name="UPDATE"/>
+  <command name="UPDATE">
+    <operation>router ospf {$params.object_id}
+{foreach $params.interface item=details}
+ network {$details.network_address} {$details.network_mask} area {$details.area}
+{/foreach}</operation>
+  </command>
   <command name="CONSTRAINT"/>
-  <command name="CREATE"/>
+  <command name="CREATE">
+    <operation>router ospf {$params.object_id}
+{foreach $params.interface item=details}
+ network {$details.network_address} {$details.network_mask} area {$details.area}
+{/foreach}</operation>
+  </command>
   <command name="DELETE"/>
   <command name="READ"/>
   <command name="LIST"/>
