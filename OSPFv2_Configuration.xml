@@ -58,10 +58,10 @@
   <command name="UPDATE">
     <operation>router ospf {$params.object_id}
 {foreach $OSPFv2_Configuration.$object_id.interface item=details}
- no network {$details.network_address} {$details.network_mask} area {$details.area}
+no network {$details.network_address} {$details.network_mask} area {$details.area}
 {/foreach}
 {foreach $params.interface item=details}
- network {$details.network_address} {$details.network_mask} area {$details.area}
+network {$details.network_address} {$details.network_mask} area {$details.area}
 {/foreach}</operation>
   </command>
   <command name="CONSTRAINT"/>
@@ -71,7 +71,9 @@
 network {$details.network_address} {$details.network_mask} area {$details.area}
 {/foreach}</operation>
   </command>
-  <command name="DELETE"/>
+  <command name="DELETE">
+    <operation>no router {$OSPFv2_Configuration.$object_id.object_id}</operation>
+  </command>
   <command name="READ"/>
   <command name="LIST"/>
 </ObjectDefinition>
