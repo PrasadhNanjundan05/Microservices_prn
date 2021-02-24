@@ -33,7 +33,7 @@
     <operation>show lldp neighbors | incl 0050.56b2.85e9</operation>
     <parser>
       <section>
-        <regexp>@^(?&lt;object_id&gt;\S+?\s+?\S+?)\s.+?\s(?&lt;neigh_port_id&gt;[a-f0-9]{4}(\.[a-f0-9]{4}){2})$@</regexp>
+        <regexp>@^(?&lt;object_id&gt;\S+?\s+?\S+?)\s+?\d+?\s.+?\s(?&lt;neigh_port_id&gt;[a-f0-9]{4}(\.[a-f0-9]{4}){2})$@</regexp>
         <xpath/>
       </section>
       <lines/>
