@@ -29,7 +29,7 @@
   </variables>
   <example/>
   <command name="IMPORT">
-    <operation>lldp neighbors detail</operation>
+    <operation>show lldp neighbors detail</operation>
     <parser>
       <section>
         <regexp>@^Chassis\s+?id:\s+?(?&lt;object_id&gt;\S+?)$@</regexp>
