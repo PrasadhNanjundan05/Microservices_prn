@@ -29,9 +29,10 @@
   </variables>
   <example/>
   <command name="IMPORT">
+    <operation>lldp neighbors detail</operation>
     <parser>
       <section>
-        <regexp>@^\s \s*$@</regexp>
+        <regexp>@^Chassis\s+?id:\s+?(?&lt;object_id&gt;\S+?)$@</regexp>
         <xpath/>
       </section>
       <lines/>
