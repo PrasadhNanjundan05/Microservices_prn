@@ -36,6 +36,10 @@
   <command name="IMPORT">
     <operation>show lldp neighbors detail</operation>
     <parser>
+      <section>
+        <regexp>@^---.+?$@</regexp>
+        <xpath/>
+      </section>
       <lines>
         <line>
           <array/>
