@@ -33,6 +33,9 @@
   <example/>
   <command name="IMPORT">
     <operation>show lldp neighbors</operation>
+    <post_template>{assign var=&quot;temp_list&quot; value=&apos; &apos;|explode:$object_id}
+{assign_object_variable var=&quot;neigh_name&quot; value = $temp_list[0]}
+{assign_object_variable var=&quot;local_interface&quot; value = $temp_list[1]}</post_template>
     <parser>
       <section>
         <regexp>@^(?&lt;object_id&gt;\S+?\s+?\S+?)\s+?\d+?\s.+?\s(?&lt;neigh_port_id&gt;[a-f0-9]{4}(\.[a-f0-9]{4}){2})$@</regexp>
