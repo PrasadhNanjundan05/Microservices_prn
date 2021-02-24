@@ -33,7 +33,7 @@
   <example/>
   <command name="IMPORT">
     <operation>show lldp neighbors</operation>
-    <post_template>{assign var=&quot;temp_list&quot; value=&apos; &apos;|explode:$params.object_id}
+    <post_template>{assign var=&quot;temp_list&quot; value=&apos; &apos;|strip|explode:$params.object_id}
 {assign_object_variable var=&quot;neigh_name&quot; value = $temp_list[0]}
 {assign_object_variable var=&quot;local_interface&quot; value = $temp_list[1]}</post_template>
     <parser>
