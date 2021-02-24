@@ -14,7 +14,7 @@
     <importIfMandatoryPresent>false</importIfMandatoryPresent>
     <maxInstances>0</maxInstances>
     <relatedObjects/>
-    <name>lldp_neighbour_local_interface</name>
+    <name>LLDP Neighbour Local interface</name>
     <group>Default</group>
     <importonce>false</importonce>
     <importrank>0</importrank>
@@ -25,22 +25,23 @@
     <sortvariable>param._order</sortvariable>
   </information>
   <variables frozen="0">
-    <variable displayName="object_id" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Local interface" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
   </variables>
   <example/>
   <command name="IMPORT">
+    <operation>show lldp neighbors | incl 0050.56b2.85e9</operation>
     <parser>
       <section>
-        <regexp>@^\s \s*$@</regexp>
+        <regexp>@^\S+?\s+?(?&lt;object_id&gt;\S+?)\s.+?$@</regexp>
         <xpath/>
       </section>
       <lines/>
     </parser>
   </command>
-  <command name="CREATE"/>
-  <command name="READ"/>
   <command name="UPDATE"/>
   <command name="CONSTRAINT"/>
+  <command name="CREATE"/>
   <command name="DELETE"/>
+  <command name="READ"/>
   <command name="LIST"/>
 </ObjectDefinition>
