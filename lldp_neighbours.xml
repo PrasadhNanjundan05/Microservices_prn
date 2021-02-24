@@ -38,7 +38,7 @@
     <operation>show lldp neighbors detail</operation>
     <parser>
       <section>
-        <regexp>@^---.+?$@</regexp>
+        <regexp>@^$@</regexp>
         <xpath/>
       </section>
       <lines>
