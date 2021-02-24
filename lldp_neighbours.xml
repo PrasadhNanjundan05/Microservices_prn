@@ -25,20 +25,17 @@
     <sortvariable>param._order</sortvariable>
   </information>
   <variables frozen="0">
-    <variable displayName="Neighbour Chassis ID" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Object ID" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="false" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
     <variable displayName="Neighbour Name" name="params.system_name" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
     <variable displayName="Neighbour port ID" name="params.port_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
     <variable displayName="Neighbour port description" name="params.port_desc" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
     <variable displayName="Neighbour mgmt IP" name="params.neigh_ip" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Local interface" name="params.local_iface" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="5" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
   </variables>
   <example/>
   <command name="IMPORT">
     <operation>show lldp neighbors detail</operation>
     <parser>
-      <section>
-        <regexp>@^Chassis\s+?id:\s+?(?&lt;object_id&gt;\S+?)$@</regexp>
-        <xpath/>
-      </section>
       <lines>
         <line>
           <array/>
@@ -58,6 +55,11 @@
         <line>
           <array/>
           <regexp>@^\s+?IP:\s+?(?&lt;neigh_ip&gt;(\d{1,3}\.){3}\d{1,3})$@</regexp>
+          <xpath/>
+        </line>
+        <line>
+          <array/>
+          <regexp>@^Local\s+?Intf:\s+?(?&lt;local_iface&gt;\S+?)$@</regexp>
           <xpath/>
         </line>
         <ignore>
