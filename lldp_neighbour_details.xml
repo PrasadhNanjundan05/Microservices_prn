@@ -39,10 +39,7 @@
 {if $neighbour_object.neigh_port_id == $params.port_id}
 {assign_object_variable var=&quot;local_interface&quot; value = $neighbour_object.local_interface}
 {/if}
-{/foreach}
-{if !$params.local_interface}
-{assign_object_variable var=&quot;local_interface&quot; value = &apos;N/A&apos;}
-{/if}</post_template>
+{/foreach}</post_template>
     <parser>
       <section>
         <regexp>@^Chassis\s+?id:\s+?(?&lt;object_id&gt;\S+?)$@</regexp>
