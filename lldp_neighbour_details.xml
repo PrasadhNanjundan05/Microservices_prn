@@ -61,7 +61,7 @@
           <xpath/>
         </line>
         <ignore>
-          <regexp>@^[^-].+?$@</regexp>
+          <regexp>@^[ a-zA-Z0-9].+$@</regexp>
         </ignore>
       </lines>
     </parser>
