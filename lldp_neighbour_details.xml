@@ -35,13 +35,13 @@
   <example/>
   <command name="IMPORT">
     <operation>show lldp neighbors detail</operation>
-    <post_template>{foreach from=$lldp_neighbours item=details}
-{if $details.neigh_port_id == $params.port_id}
-{assign_object_variable var=&quot;local_interface&quot; value = $details.local_interface}
+    <post_template>{foreach from=$lldp_neighbours item=$neighbour_object}
+{if $neighbour_object.neigh_port_id == $params.port_id}
+{assign_object_variable var=&quot;local_interface&quot; value = $neighbour_object.local_interface}
 {/if}
 {/foreach}
 {if !$params.local_interface}
-{assign_object_variable var=&quot;local_interface&quot; value = &apos;&apos;}
+{assign_object_variable var=&quot;local_interface&quot; value = &apos;N/A&apos;}
 {/if}</post_template>
     <parser>
       <section>
