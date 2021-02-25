@@ -35,7 +35,7 @@
   <example/>
   <command name="IMPORT">
     <operation>show lldp neighbors detail</operation>
-    <post_template>{foreach from=$lldp_neighbours item=details key=object}
+    <post_template>{foreach from=$lldp_neighbours.$object_id item=details key=object}
 {if $details.neigh_port_id == $params.port_id}
 {assign_object_variable var=&quot;local_interface&quot; value = $details.local_interface}
 {/if}
