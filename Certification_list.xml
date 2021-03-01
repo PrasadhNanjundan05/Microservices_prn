@@ -54,22 +54,22 @@
         </line>
         <line>
           <array/>
-          <regexp>@^\s+?Issuer\s+?DN:\s+?(?&lt;issuer_dn&gt;\S.+?)$@</regexp>
+          <regexp>@^\s+?Issuer\s+?DN:\s+?(?&lt;issuer_dn&gt;\S.+)$@</regexp>
           <xpath/>
         </line>
         <line>
           <array/>
-          <regexp>@^\s+?Not\s+?Valid\s+?Before:\s+?(?&lt;before&gt;\S.+?)$@</regexp>
+          <regexp>@^\s+?Not\s+?Valid\s+?Before:\s+?(?&lt;before&gt;\S.+)$@</regexp>
           <xpath/>
         </line>
         <line>
           <array/>
-          <regexp>@^\s+?Not\s+?Valid\s+?After:\s+?(?&lt;after&gt;\S.+?)$@</regexp>
+          <regexp>@^\s+?Not\s+?Valid\s+?After:\s+?(?&lt;after&gt;\S.+)$@</regexp>
           <xpath/>
         </line>
         <line>
           <array/>
-          <regexp>@^\s+?Issued\s+?On:\s+?(?&lt;issued_on&gt;\S.+?)$@</regexp>
+          <regexp>@^\s+?Issued\s+?On:\s+?(?&lt;issued_on&gt;\S.+)$@</regexp>
           <xpath/>
         </line>
       </lines>
