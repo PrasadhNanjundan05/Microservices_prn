@@ -49,11 +49,6 @@
         </line>
         <line>
           <array/>
-          <regexp>@ ^\s+?Subject\s+?DN:\s+?(?&lt;subject_dn&gt;\S.+)$@</regexp>
-          <xpath/>
-        </line>
-        <line>
-          <array/>
           <regexp>@^\s+?Issuer\s+?DN:\s+?(?&lt;issuer_dn&gt;\S.+)$@</regexp>
           <xpath/>
         </line>
@@ -70,6 +65,11 @@
         <line>
           <array/>
           <regexp>@^\s+?Issued\s+?On:\s+?(?&lt;issued_on&gt;\S.+)$@</regexp>
+          <xpath/>
+        </line>
+        <line>
+          <array/>
+          <regexp>@ ^\s+?Subject\s+?DN:\s+?(?&lt;subject_dn&gt;\S.+)$@</regexp>
           <xpath/>
         </line>
         <ignore>
