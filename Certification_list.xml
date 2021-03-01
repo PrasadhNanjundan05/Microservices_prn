@@ -72,6 +72,9 @@
           <regexp>@^\s+?Issued\s+?On:\s+?(?&lt;issued_on&gt;\S.+)$@</regexp>
           <xpath/>
         </line>
+        <ignore>
+          <regexp>@^\s+?\S.+?$@</regexp>
+        </ignore>
       </lines>
     </parser>
   </command>
