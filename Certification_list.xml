@@ -49,7 +49,7 @@
         </line>
         <line>
           <array/>
-          <regexp>@ ^\s+?Subject\s+?DN:\s+?(?&lt;subject_dn&gt;\S.+?)$@</regexp>
+          <regexp>@ ^\s+?Subject\s+?DN:\s+?(?&lt;subject_dn&gt;\S.+)$@</regexp>
           <xpath/>
         </line>
         <line>
