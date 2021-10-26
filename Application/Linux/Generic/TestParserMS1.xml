@@ -32,10 +32,8 @@
     <operation><![CDATA[sh run]]></operation>
     <parser>
       <section>
-        <regexp>
-          <regexp>@\s*interface\s+preconfigure\s+(?&amp;lt;object_id&amp;gt;\S+)@</regexp>
-          <regexp>@\s*interface\s+(?&amp;lt;object_id&amp;gt;\S+)@</regexp>
-        </regexp>
+        <regexp>@\s*interface\s+preconfigure\s+(?&amp;lt;object_id&amp;gt;\S+)@</regexp>
+        <regexp>@\s*interface\s+(?&amp;lt;object_id&amp;gt;\S+)@</regexp>
         <xpath/>
       </section>
       <lines/>
