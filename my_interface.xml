@@ -1,0 +1,96 @@
+<ObjectDefinition>
+  <information>
+    <icon>none</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <serviceTaskType/>
+    <order>0</order>
+    <visibility>5</visibility>
+    <configType>cli</configType>
+    <createTemplateId/>
+    <createTemplateObject/>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects/>
+    <name>my_interface</name>
+    <group>Default</group>
+    <importonce>false</importonce>
+    <importrank>0</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>false</sortascending>
+    <sortauto>false</sortauto>
+    <sortnumerical>false</sortnumerical>
+    <sortvariable>param._order</sortvariable>
+  </information>
+  <variables frozen="0">
+    <variable displayName="Interface Name" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Interface IP" name="params.ip" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Subnet Mask" name="params.mask" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example>
+    <content>config system interface
+edit &quot;port1&quot;
+set vdom &quot;root&quot;
+set ip 192.168.2.5 255.255.255.0
+set allowaccess ping https ssh http fgfm
+set type physical
+set snmp-index 1
+set mtu-override enable
+set mtu 1450
+next
+edit &quot;port2&quot;
+set vdom &quot;root&quot;
+set ip 172.16.0.1 255.255.255.0
+set allowaccess ping https ssh http
+set type physical
+set snmp-index 2
+next
+edit &quot;port3&quot;
+set vdom &quot;root&quot;
+set ip 10.0.0.38 255.255.255.0
+set allowaccess ping https ssh http
+set type physical
+set snmp-index 3
+next
+edit &quot;ssl.root&quot;
+set vdom &quot;root&quot;
+settype tunnel
+set alias &quot;SSL VPN interface&quot;
+set snmp-index 4
+next
+end</content>
+  </example>
+  <command name="IMPORT">
+    <operation>sh system interface</operation>
+    <parser>
+      <section>
+        <regexp>@edit &quot;(?&lt;object_id&gt;\S+)&quot;@</regexp>
+        <xpath/>
+      </section>
+      <lines>
+        <line>
+          <array/>
+          <regexp>@set ip (?&lt;ip&gt;\S+) (?&lt;mask&gt;\S+)@</regexp>
+          <xpath/>
+        </line>
+        <ignore>
+          <regexp>@set*@</regexp>
+        </ignore>
+      </lines>
+    </parser>
+  </command>
+  <command name="UPDATE">
+    <operation>config system interface
+edit &quot;{$params.object_id}&quot;
+set ip {$params.ip} {$params.mask}
+next
+end</operation>
+  </command>
+  <command name="CONSTRAINT"/>
+  <command name="CREATE"/>
+  <command name="DELETE"/>
+  <command name="READ"/>
+  <command name="LIST"/>
+</ObjectDefinition>
