@@ -52,7 +52,6 @@
           <array name="classes">
             <lines/>
             <regexp>@^\s+class(?&lt;class_name&gt;.*)$@</regexp>
-            <regexp>@^\s+priority(?&lt;priority&gt;.*)$@</regexp>
             <mregexp/>
             <xpath/>
           </array>
