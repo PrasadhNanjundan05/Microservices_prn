@@ -35,6 +35,10 @@
         <regexp>@class-map match-any (?&amp;lt;object_id&amp;gt;\S+)\s*@</regexp>
         <xpath/>
       </section>
+      <section>
+        <regexp>@^(?&lt;variable_name&gt;.*)$@</regexp>
+        <xpath/>
+      </section>
       <lines>
         <line>
           <array name="matches">
