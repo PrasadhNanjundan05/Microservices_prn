@@ -47,6 +47,26 @@
           <regexp/>
           <xpath/>
         </line>
+        <line>
+          <array/>
+          <regexp>@^(?&lt;variable_name&gt;.*)$@</regexp>
+          <xpath/>
+        </line>
+        <line>
+          <array name="default_name">
+            <lines/>
+            <regexp>@^(?&lt;variable_name&gt;.*)$@</regexp>
+            <mregexp/>
+            <xpath/>
+          </array>
+          <regexp/>
+          <xpath/>
+        </line>
+        <line>
+          <array/>
+          <regexp>@^(?&lt;variable_name&gt;.*)$@</regexp>
+          <xpath/>
+        </line>
       </lines>
     </parser>
   </command>
