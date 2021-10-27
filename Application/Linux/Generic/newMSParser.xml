@@ -40,6 +40,7 @@
           <array name="matches">
             <lines/>
             <regexp>@\s+match\s(?&amp;lt;match&amp;gt;.+)@</regexp>
+            <regexp>@\s+match2\s(?&amp;lt;match2&amp;gt;.+)@</regexp>
             <mregexp/>
             <xpath/>
           </array>
