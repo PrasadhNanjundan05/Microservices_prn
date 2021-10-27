@@ -35,8 +35,10 @@
     <content>policy-map PEtoCE-900-768-0p-41p-50p
   class RT
     priority 900
+    test one
   class VD
-    priority 768</content>
+    priority 768
+    test two</content>
   </example>
   <command name="IMPORT">
     <operation><![CDATA[sh run]]></operation>
