@@ -40,7 +40,7 @@
     <operation><![CDATA[sh run]]></operation>
     <parser>
       <section>
-        <regexp>@policy-map\s+(?&amp;lt;object_id&amp;gt;\S+)\s*@</regexp>
+        <regexp>@policy-map\s+(?&lt;object_id&gt;\S+)\s*@</regexp>
         <xpath/>
       </section>
       <lines>
