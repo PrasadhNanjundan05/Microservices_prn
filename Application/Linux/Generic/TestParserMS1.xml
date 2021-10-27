@@ -47,7 +47,7 @@
         <line>
           <array name="classed">
             <lines/>
-            <regexp>@^\sclass(?&lt;class_name&gt;.*)$@</regexp>
+            <regexp>@^\s\sclass(?&lt;class_name&gt;.*)$@</regexp>
             <regexp>@^\s\spriority(?&lt;priority&gt;.*)$@</regexp>
             <mregexp/>
             <xpath/>
