@@ -52,6 +52,9 @@
           <regexp/>
           <xpath/>
         </line>
+        <ignore>
+          <regexp>@^\s+priority.*$@</regexp>
+        </ignore>
       </lines>
     </parser>
   </command>
