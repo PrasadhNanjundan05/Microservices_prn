@@ -44,30 +44,7 @@
         <regexp>@policy-map\s+(?&lt;object_id&gt;\S+)\s*@</regexp>
         <xpath/>
       </section>
-      <lines>
-        <line>
-          <array name="class">
-            <lines>
-              <line>
-                <array name="priority">
-                  <lines/>
-                  <regexp>@^\s+priority\s+(?&lt;priority&gt;.*)$@</regexp>
-                  <mregexp/>
-                  <xpath/>
-                </array>
-                <regexp/>
-                <xpath/>
-              </line>
-            </lines>
-            <lines/>
-            <regexp>@^\s+class\s+(?&lt;class_name&gt;.*)$@</regexp>
-            <mregexp/>
-            <xpath/>
-          </array>
-          <regexp/>
-          <xpath/>
-        </line>
-      </lines>
+      <lines/>
     </parser>
   </command>
   <command name="CREATE"/>
