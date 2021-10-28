@@ -44,14 +44,8 @@
       <lines>
         <line>
           <array name="classes">
-            <lines>
-              <line>
-                <array/>
-                <regexp>@^\s+class(?&lt;class_name&gt;.*)$@</regexp>
-                <xpath/>
-              </line>
-            </lines>
             <lines/>
+            <regexp>@^\s+class(?&lt;class_name&gt;.*)$@</regexp>
             <mregexp/>
             <xpath/>
           </array>
