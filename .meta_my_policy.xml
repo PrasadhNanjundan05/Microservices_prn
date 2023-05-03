@@ -2,8 +2,12 @@
 <metadata>
     <map>
         <entry>
+            <key>DISPLAYNAME</key>
+            <value>my_policy.xml</value>
+        </entry>
+        <entry>
             <key>DATE_MODIFICATION</key>
-            <value>1603181027559</value>
+            <value>1683105324276</value>
         </entry>
         <entry>
             <key>REPOSITORY</key>
@@ -11,7 +15,7 @@
         </entry>
         <entry>
             <key>DATE_CREATION</key>
-            <value>1603181027553</value>
+            <value>1683105324246</value>
         </entry>
         <entry>
             <key>MODEL</key>
