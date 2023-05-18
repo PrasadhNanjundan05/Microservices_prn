@@ -36,7 +36,9 @@
   <example/>
   <command name="IMPORT">
     <parser>
-      <section/>
+      <section>
+        <regexp>@^\s \s*$@</regexp>
+      </section>
       <lines/>
     </parser>
   </command>
@@ -46,11 +48,13 @@ commit]]></operation>
   </command>
   <command name="READ"/>
   <command name="UPDATE">
-    <operation><![CDATA[
-set interface interface {$params.object_id} type ethernetCsmacd ethernet rate 100000000 fec off admin-status up transport ltx-off tsfs
+    <operation><![CDATA[{if  $params.status == "up" }
+  set interface interface {$params.object_id} type ethernetCsmacd ethernet rate 100000000 fec off admin-status up transport ltx-off tsfs
+{else if  $params.status == "down" }
+  delete interface interface {$params.object_id}
+{/if}
 commit
-delete interface interface {$params.object_id}
-commit]]></operation>
+]]></operation>
   </command>
   <command name="CONSTRAINT"/>
   <command name="DELETE"/>
